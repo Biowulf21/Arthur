@@ -25,7 +25,7 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <widget class="QTextEdit" name="textEdit">
+        <widget class="QTextEdit" name="templateLineEdit">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -53,39 +53,32 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QPlainTextEdit" name="plainTextEdit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="0">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="sendMailBtn">
          <property name="text">
           <string>Send Emails</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="sentLabel">
          <property name="text">
           <string>Sent</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QListWidget" name="listWidget"/>
+        <widget class="QListWidget" name="sentListWidget"/>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="receipientLabel">
          <property name="text">
           <string>Receipients</string>
          </property>
         </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QTextEdit" name="receipientTextEdit"/>
        </item>
       </layout>
      </widget>
