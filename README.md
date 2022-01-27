@@ -13,11 +13,14 @@ Input the receipients' emails in the textbox like so:
 The email template should be written on the textboxes that are labeled for either the email subject or body.
 
 **Email Subject**
+
+
 ![email_subject](https://user-images.githubusercontent.com/77718539/151309876-b6749b1f-09de-4967-932a-d0533bfefc5b.png)
 
 
-
 **Email Body**
+
+
 ![email_body](https://user-images.githubusercontent.com/77718539/151309863-812c8ecc-b33b-453c-8287-53fd719d8a70.png)
 
 
