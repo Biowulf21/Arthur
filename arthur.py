@@ -8,7 +8,7 @@ import sys
 from Arthur import Ui_MainWindow
 
 #import modules
-import sendMail
+from sendMail import bulkSendMail
 
 
 class UI(QMainWindow):
@@ -27,9 +27,15 @@ class UI(QMainWindow):
 
     def sendMail(self):
         receipientList = []
+        subject = self.ui.subjectBodyLineEdit.text()
+        print(f'subject is {subject}')
+        message = self.ui.templateLineEdit.toPlainText()
+        print(f'message is {message}')
+
         # gets the emails from the receipient text edit and turns it into individual strings
         emails = self.ui.receipientTextEdit.toPlainText()
         receipientList = emails.split()
+        print(f'receipient list is  {receipientList}')
 
         # list of emails that are successfuly sent
         sentList = []
@@ -44,13 +50,26 @@ class UI(QMainWindow):
         # set up minimum value for progressbar
         progressValue = 1
 
-        for recepient in receipientList:
-            # update progress bar based on the how many receipients have been sent and email already
-            sendMail.bulkSendMail(recepient)
+        # update progress bar based on the how many receipients have been sent and email already
+        for receipient in receipientList:
             self.ui.progressBar.setValue(progressValue)
-            progressValue += 1
             # add email to sent list
-            sentList.append(recepient)
+            sendStatus = bulkSendMail(
+                receipient=receipient, subject=subject, emailBody=message)
+            progressValue += 1
+            try:
+                if sendStatus == True:
+                    sentList.append(receipient)
+                elif sendStatus == False:
+                    unsentList.append(receipient)
+                else:
+                    print('Unknown error')
+            except Exception as e:
+                print(e)
+            print(f'unsent list is {unsentList}')
+            print(f'sent list is {sentList}')
+        self.ui.sentListWidget.addItems(sentList)
+        print('done')
 
 
 if __name__ == "__main__":
