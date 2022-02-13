@@ -24,7 +24,21 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Email Subject</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Email Body</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
         <widget class="QTextEdit" name="templateLineEdit">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -34,22 +48,44 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QLineEdit" name="subjectBodyLineEdit"/>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Email Body</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Email Subject</string>
-         </property>
-        </widget>
+       <item row="5" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="attachmentBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>400</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Add Attachment</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="attachmentLabel">
+           <property name="text">
+            <string>No Attachment Chosen</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -62,40 +98,61 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="0">
-        <widget class="QProgressBar" name="progressBar">
-         <property name="value">
-          <number>24</number>
-         </property>
-        </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="receipientLabel">
+           <property name="text">
+            <string>Receipients</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="receipientTextEdit"/>
+         </item>
+         <item>
+          <widget class="QProgressBar" name="progressBar">
+           <property name="value">
+            <number>24</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="sendMailBtn">
+           <property name="text">
+            <string>Send Emails</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="sendMailBtn">
-         <property name="text">
-          <string>Send Emails</string>
-         </property>
-        </widget>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="sentLabel">
+           <property name="text">
+            <string>Sent</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="sentListWidget"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Failed</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="failedSentList"/>
+         </item>
+        </layout>
        </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="sentLabel">
-         <property name="text">
-          <string>Sent</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QListWidget" name="sentListWidget"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="receipientLabel">
-         <property name="text">
-          <string>Receipients</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextEdit" name="receipientTextEdit"/>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3"/>
        </item>
       </layout>
      </widget>

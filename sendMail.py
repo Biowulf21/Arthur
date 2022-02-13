@@ -5,7 +5,7 @@ from time import sleep
 from email.message import EmailMessage
 
 
-def bulkSendMail(receipient, subject, emailBody):
+def bulkSendMail(receipient, subject, emailBody, attachment):
     sleep(1)
     sender = "crusaderyearbook@xu.edu.ph"
     password = "uisjoyfegjgudwpp"
