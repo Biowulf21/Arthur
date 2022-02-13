@@ -36,7 +36,6 @@ class UI(QMainWindow):
         emails = self.ui.receipientTextEdit.toPlainText()
         receipientList = emails.split()
         print(f'receipient list is  {receipientList}')
-        # TODO: Add ability to add attachments
         sentList = []
         # list of emails that were unsuccessfuly sent
         unsentList = []
@@ -54,8 +53,7 @@ class UI(QMainWindow):
         for receipient in receipientList:
             self.ui.progressBar.setValue(progressValue)
             # add email to sent list
-            sendStatus = bulkSendMail(
-                receipient=receipient, subject=subject, emailBody=message, attachment=attachment)
+            sendStatus = bulkSendMail(receipient=receipient, subject=subject, emailBody=message, attachment=attachment)
             try:
                 if sendStatus == True:
                     sentList.append(receipient)
